@@ -1,0 +1,451 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Customer Insights | BasicPosh Store</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e9e8e7",
+                    "on-surface": "#1b1c1c",
+                    "secondary-container": "#dcdddd",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "primary": "#000000",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "inverse-primary": "#c8c6c5",
+                    "secondary": "#5d5f5f",
+                    "surface": "#fbf9f9",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#1c1b1b",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#c4c7c7",
+                    "on-primary-fixed-variant": "#474646",
+                    "surface-variant": "#e4e2e2",
+                    "primary-fixed": "#e5e2e1",
+                    "secondary-fixed": "#e2e2e2",
+                    "tertiary-fixed": "#f6e0b8",
+                    "surface-container": "#efeded",
+                    "on-tertiary-fixed-variant": "#534528",
+                    "background": "#fbf9f9",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#fbf9f9",
+                    "surface-container-low": "#f5f3f3",
+                    "on-tertiary-fixed": "#251a03",
+                    "inverse-surface": "#303031",
+                    "tertiary": "#000000",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#251a03",
+                    "surface-dim": "#dbdad9",
+                    "on-secondary-container": "#5f6161",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "on-surface-variant": "#444748",
+                    "surface-tint": "#5f5e5e",
+                    "on-secondary-fixed-variant": "#454747",
+                    "on-primary-container": "#858383",
+                    "on-background": "#1b1c1c",
+                    "on-tertiary-container": "#938260",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e4e2e2",
+                    "on-primary-fixed": "#1c1b1b",
+                    "tertiary-fixed-dim": "#d9c49e",
+                    "inverse-on-surface": "#f2f0f0",
+                    "outline": "#747878",
+                    "secondary-fixed-dim": "#c6c6c7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Side Navigation Bar -->
+<nav class="fixed flex flex-col h-screen py-8 px-4 bg-surface dark:bg-inverse-surface border-r border-outline-variant dark:border-outline h-full w-64 docked left-0 top-0 z-50">
+<div class="mb-12 px-2">
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary">BasicPosh</h1>
+<p class="font-body-md text-body-md text-secondary opacity-70">Admin Console</p>
+</div>
+<div class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-3 p-3 rounded transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-highest text-secondary dark:text-secondary-fixed-dim" href="dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-highest text-secondary dark:text-secondary-fixed-dim" href="inventory.html">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-body-md text-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-highest text-secondary dark:text-secondary-fixed-dim" href="orders.html">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-body-md text-body-md">Orders</span>
+</a>
+<!-- Active Tab: Customers -->
+<a class="flex items-center gap-3 p-3 rounded text-primary dark:text-on-primary-fixed-variant font-bold border-r-2 border-primary dark:border-inverse-primary bg-surface-container-low" href="customers.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md text-body-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-highest text-secondary dark:text-secondary-fixed-dim" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</div>
+<button class="w-full border border-outline-variant text-secondary py-2 px-4 text-sm mb-4 hover:bg-surface-container-low transition-colors" id="logout-btn" type="button">Sign Out</button>
+<div class="mt-auto p-4 flex items-center gap-3 bg-surface-container rounded-lg">
+<img alt="BasicPosh Admin Avatar" class="w-10 h-10 rounded-full object-cover" data-alt="A professional headshot of a modern executive in a minimalist studio setting. The lighting is soft and directional, highlighting clean facial features. The background is a neutral grey that aligns with a sophisticated corporate aesthetic, using a monochromatic palette to convey premium reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIAa5dLeMFciz-E-fS4NFMUlwKfS9d_OkwJJe2YsCeufuACUAhO25e9RbnpKSEDBW2PANnrOHjOmi_IgYAELDSBD66LiEC_7HJMiyQ1f55xOTIg1ROYCirNsBGXXAZ18ab0FX7ifGUBaqnOUu6SrpQ4c4k6cTCYiL-g4LLK-X2DCng9EEB0JRCU10ZR2OVaJ3aplwEZl99hUYU_0zN6p9ZCHLcIWdbrhvS9-pCtId_BGa4eykERSBaQRyPwSo5K4G5fHef85EE_ZQ">
+<div>
+<p class="font-label-md text-label-md font-bold">Alex Chen</p>
+<p class="text-xs text-secondary">Chief Operations</p>
+</div>
+</div>
+</nav>
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-40 flex justify-between items-center px-gutter py-4 ml-64 bg-surface/80 backdrop-blur-md border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary opacity-60" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-label-md font-label-md w-64 focus:ring-1 focus:ring-primary transition-all" placeholder="Search customer records..." type="text">
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="h-8 w-px bg-outline-variant mx-2"></div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md flex items-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                NEW PRODUCT
+            </button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-gutter max-w-container-max mx-auto min-h-screen">
+<!-- Header Section -->
+<section class="mb-margin-desktop flex justify-between items-end">
+<div>
+<h2 class="font-display-lg text-display-lg mb-2">Customer Insights</h2>
+<p class="font-body-lg text-body-lg text-secondary">Analyze high-value segments and purchasing behaviors across product categories.</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 border border-outline rounded-lg font-label-md text-label-md hover:bg-surface-container transition-colors">
+                    EXPORT PDF
+                </button>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity">
+                    VIEW ALL USERS
+                </button>
+</div>
+</section>
+<!-- Insights Grid (Bento Style) -->
+<div class="grid grid-cols-12 gap-gutter mb-margin-desktop">
+<!-- Category Interest (Wigs vs Laundrette vs Tech) -->
+<div class="col-span-12 lg:col-span-7 bg-surface-container-lowest p-8 rounded-xl border border-outline-variant">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="font-headline-md text-headline-md mb-1">Category Distribution</h3>
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest">Market Share Interest</p>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="insights">insights</span>
+</div>
+<div class="space-y-6">
+<!-- Wigs -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-md text-label-md font-bold">Premium Wigs &amp; Hair</span>
+<span class="font-body-md text-body-md">42%</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 42%;"></div>
+</div>
+</div>
+<!-- Laundrette -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-md text-label-md font-bold">Modern Laundrette</span>
+<span class="font-body-md text-body-md">31%</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 31%;"></div>
+</div>
+</div>
+<!-- Tech -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-md text-label-md font-bold">Tech Accessories</span>
+<span class="font-body-md text-body-md">27%</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-outline" style="width: 27%;"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 grid grid-cols-3 gap-4 pt-8 border-t border-outline-variant">
+<div>
+<p class="font-label-md text-label-md text-secondary">Avg. Order Value</p>
+<p class="font-headline-md text-headline-md">KES 32,305.00</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-secondary">Retention Rate</p>
+<p class="font-headline-md text-headline-md">68%</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-secondary">New Customers</p>
+<p class="font-headline-md text-headline-md">+12.4%</p>
+</div>
+</div>
+</div>
+<!-- Customer Demographics Mini-Card -->
+<div class="col-span-12 lg:col-span-5 bg-primary text-on-primary p-8 rounded-xl flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md mb-6">Demographics</h3>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md opacity-70">TOP AGE GROUP</span>
+<span class="font-body-lg text-body-lg font-bold">25 - 34</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md opacity-70">PRIMARY LOCATION</span>
+<span class="font-body-lg text-body-lg font-bold">New York, US</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md opacity-70">PREF. DEVICE</span>
+<span class="font-body-lg text-body-lg font-bold">iOS / Mobile</span>
+</div>
+</div>
+</div>
+<div class="mt-12">
+<p class="font-label-md text-label-md opacity-50 mb-4 uppercase tracking-widest">Growth Forecast</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-black tracking-tight">+KES 5.56M</span>
+<span class="text-tertiary-fixed font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+                            14%
+                        </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Customers Table -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md">Top Customers</h3>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container rounded transition-colors"><span class="material-symbols-outlined" data-icon="filter_list">filter_list</span></button>
+<button class="p-2 hover:bg-surface-container rounded transition-colors"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</div>
+</div>
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-6 py-4 font-label-md text-label-md text-secondary uppercase tracking-widest">Customer</th>
+<th class="px-6 py-4 font-label-md text-label-md text-secondary uppercase tracking-widest">Total Spend</th>
+<th class="px-6 py-4 font-label-md text-label-md text-secondary uppercase tracking-widest">Last Order</th>
+<th class="px-6 py-4 font-label-md text-label-md text-secondary uppercase tracking-widest">Top Category</th>
+<th class="px-6 py-4 font-label-md text-label-md text-secondary uppercase tracking-widest text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="Eleanor Shellstrop" class="w-full h-full object-cover" data-alt="A portrait of a young woman with a vibrant and confident expression, set against a soft-focus urban background. She has well-styled hair, aligning with a high-end personal care aesthetic. The lighting is bright and airy, typical of high-fashion commercial photography, using a palette of soft pastels and clean whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAROT27H2jH00lkpUD7OMtT-8dIyELsp9vmQrMDWvUtNVyN5Zv3sxzr7n2OIzIwPvH0i0jzhBLnX5ff8jqw2B3VoU8xTZQsCl0c92s8LtyA2DkZlX2SjObWaGRsUYOFxP6BqYTibRYISrZxydtg_6gC8L54OBHGNX5ocwv03Lwwp4Xl-QEYX0b9wpEfbhqoKBd69dbmrx6s2phMRa8fwA_19kzJs8U5QIYYxAvbG7r6gfdJmqo9r2BQfuhAl1M76kb7rQ_eX94Uh3k">
+</div>
+<div>
+<p class="font-body-md text-body-md font-bold">Eleanor Shellstrop</p>
+<p class="text-xs text-secondary">eleanor.s@example.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md font-bold">KES 1,618,500.00</td>
+<td class="px-6 py-4 font-body-md text-body-md">Oct 24, 2023</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-surface-container text-xs font-bold rounded-full">Wigs</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="inline-block w-2 h-2 bg-primary rounded-full mr-2"></span>
+<span class="text-xs font-bold">VIP</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="Chidi Anagonye" class="w-full h-full object-cover" data-alt="A sophisticated portrait of a scholarly man with glasses, dressed in a minimalist linen shirt. The setting is an upscale, well-lit interior with modern architectural details. The overall mood is intelligent and refined, using a monochromatic color palette with subtle warm undertones to evoke a sense of posh essentialism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ11Z8gK8qeEh-PRKEkxklDZ8jL5wlaGg9pRSAU0nRbnRhJbZE6q4uqHUQF6KvoVDp0__gWPLCopjvQ877cMJa-RVUAsIHVynce-updG2y6M3DZTad854MUkN-XC9Zvk1RVPDqXdDP8tSzzFyqd20rLgf9K1HZYOIWLzs1p9e7o8vlYMGUeKXvZzQ4OWzldQD4VMgWsz7gZt_y-EPYpws9oT2VHBmxDe-kk4Lcl2n7xV0IVQXjCr9ZIpiyGIpuyfYa93BNVWUPWCs">
+</div>
+<div>
+<p class="font-body-md text-body-md font-bold">Chidi Anagonye</p>
+<p class="text-xs text-secondary">chidi.a@university.edu</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md font-bold">KES 1,067,365.00</td>
+<td class="px-6 py-4 font-body-md text-body-md">Oct 21, 2023</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-surface-container text-xs font-bold rounded-full">Tech</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="inline-block w-2 h-2 bg-secondary rounded-full mr-2"></span>
+<span class="text-xs font-bold">Tier 2</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="Tahani Al-Jamil" class="w-full h-full object-cover" data-alt="A glamorous close-up of a high-profile woman with elaborate accessories, looking elegantly towards the camera. The background is a luxurious showroom with gold accents and high-contrast shadows. The lighting is dramatic yet soft, emphasizing a premium, boutique-store aesthetic focused on high-quality product excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDb91HaUMka820InL1pSySp6cnE5bh8OUOrVruuxzVGVaxrZHdQtHe_ItpLb0Xp8hjD6XyjKlKcrqX2NvazpT91oq5KhIht4N10u_gUGeHHJCQa6C8T1dYi6ZtV7yjC3oAHntR0DhNBg2tDIWYkLL_ZxR7rKJdmbKS-w_nWT_zgffsKnzYDwvjWPb9RMh6f3ZEZ8Hi8Df8C5tAofm0kOQ5enhRoVfZPlFm_10QIt5M_FkK1mjIPHd7bo8ELyjwL0EaG65nrD0Rma4">
+</div>
+<div>
+<p class="font-body-md text-body-md font-bold">Tahani Al-Jamil</p>
+<p class="text-xs text-secondary">tahani.posh@royal.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md font-bold">KES 2,459,600.00</td>
+<td class="px-6 py-4 font-body-md text-body-md">Oct 25, 2023</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-surface-container text-xs font-bold rounded-full">Laundrette</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="inline-block w-2 h-2 bg-primary rounded-full mr-2"></span>
+<span class="text-xs font-bold">ELITE</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="Jason Mendoza" class="w-full h-full object-cover" data-alt="A portrait of a young man with a casual yet trendy street-wear style, standing in a clean, minimalist urban environment. The photo uses high-key lighting to create a bright and modern look. The color palette is dominated by whites, blacks, and greys, reflecting a clean and functional design philosophy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUmXIJOATw7pSwXZ7tZWcaEbqBJz8get8zP2y60l7amia935T_fS_5OsBzOP44BwgDFUyM0pUt6EeSjRFkdbb9xg_746S3KUtEncBjfsMZq8uvtHz-2uC-cC0V243_1udMxhlTurhN1MWsF_FVzXcyZLCNI4GPK2tFH-7L7EBHBkmBfFI2e7x7sz4p9uZbKtb-1xbLBswdCaHV9NM72iW5ZBKHR-dWAAXMnisti3hGkBHoTBQHlQtJZKFiYHeXGQ4Xj3dPxASxdvo">
+</div>
+<div>
+<p class="font-body-md text-body-md font-bold">Jason Mendoza</p>
+<p class="text-xs text-secondary">duuuuuvall@jaguar.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md font-bold">KES 409,532.50</td>
+<td class="px-6 py-4 font-body-md text-body-md">Oct 19, 2023</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-surface-container text-xs font-bold rounded-full">Tech</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="inline-block w-2 h-2 bg-outline-variant rounded-full mr-2"></span>
+<span class="text-xs font-bold text-secondary">Active</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="p-4 border-t border-outline-variant flex justify-between items-center bg-surface-container-low">
+<p class="font-label-md text-label-md text-secondary">Showing 4 of 2,840 customers</p>
+<div class="flex gap-2">
+<button class="p-2 border border-outline rounded hover:bg-surface-container transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-2 border border-outline rounded hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Dynamic Insights Component -->
+<section class="mt-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-surface-container p-8 rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<h4 class="font-headline-md text-headline-md mb-4">Customer Acquisition</h4>
+<p class="font-body-md text-body-md text-secondary mb-6">Organic search remains your strongest channel for the 'Laundrette' category.</p>
+<button class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+                        SEE FULL REPORT <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Abstract Pattern Background -->
+<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl transition-transform group-hover:scale-125"></div>
+</div>
+<div class="bg-tertiary-fixed p-8 rounded-xl relative overflow-hidden group">
+<div class="relative z-10 text-on-tertiary-fixed">
+<h4 class="font-headline-md text-headline-md mb-4">Seasonal Trends</h4>
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant mb-6">Wig sales are projected to peak in November by 25% based on previous historical data.</p>
+<button class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+                        VIEW FORECAST <span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</button>
+</div>
+<div class="absolute -right-12 -top-12 w-48 h-48 border-[20px] border-on-tertiary-fixed/10 rounded-full"></div>
+</div>
+</section>
+</main>
+<!-- Footer Space -->
+<footer class="ml-64 p-gutter border-t border-outline-variant mt-20 opacity-40">
+<div class="flex justify-between items-center">
+<p class="font-label-md text-label-md">© 2023 BASICPOSH STORE ADMIN CONSOLE</p>
+<div class="flex gap-6">
+<a class="font-label-md text-label-md hover:underline" href="#">PRIVACY</a>
+<a class="font-label-md text-label-md hover:underline" href="#">TERMS</a>
+<a class="font-label-md text-label-md hover:underline" href="#">SUPPORT</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Interaction logic for table rows or hover states if needed
+        document.querySelectorAll('tbody tr').forEach(row => {
+            row.addEventListener('click', () => {
+                // Potential expansion logic
+                console.log('Customer detail view triggered');
+            });
+        });
+    </script>
+<script src="admin.js"></script>
+<script>
+        if (window.BasicPoshAdmin) window.BasicPoshAdmin.requireAuth();
+        document.getElementById('logout-btn')?.addEventListener('click', () => window.BasicPoshAdmin.logout());
+    </script>
+
+
+</body></html>
