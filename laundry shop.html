@@ -1,0 +1,295 @@
+ <!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Shop All | BasicPosh</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+        .product-card:hover .quick-add-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#1c1b1b",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#474646",
+                        "outline-variant": "#c4c7c7",
+                        "primary-fixed": "#e5e2e1",
+                        "surface-variant": "#e4e2e2",
+                        "surface-container": "#efeded",
+                        "tertiary-fixed": "#f6e0b8",
+                        "on-tertiary-fixed-variant": "#534528",
+                        "background": "#fbf9f9",
+                        "secondary-fixed": "#e2e2e2",
+                        "surface-bright": "#fbf9f9",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f5f3f3",
+                        "on-tertiary-fixed": "#251a03",
+                        "on-surface": "#1b1c1c",
+                        "surface-container-high": "#e9e8e7",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#dcdddd",
+                        "primary": "#000000",
+                        "inverse-primary": "#c8c6c5",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "secondary": "#5d5f5f",
+                        "surface": "#fbf9f9",
+                        "surface-tint": "#5f5e5e",
+                        "on-primary-container": "#858383",
+                        "on-background": "#1b1c1c",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-tertiary-container": "#938260",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-primary-fixed": "#1c1b1b",
+                        "tertiary-fixed-dim": "#d9c49e",
+                        "inverse-on-surface": "#f2f0f0",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "outline": "#747878",
+                        "inverse-surface": "#303031",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#000000",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#251a03",
+                        "surface-dim": "#dbdad9",
+                        "on-surface-variant": "#444748",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-secondary-container": "#5f6161"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto bg-white dark:bg-primary-container border-b border-outline-variant dark:border-on-primary-fixed-variant">
+<a class="font-headline-md text-headline-md tracking-tighter font-black text-primary dark:text-primary-fixed" href="home.html">
+            BasicPosh
+        </a>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-secondary dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 font-label-md text-label-md" href="wigs.html">Wigs</a>
+<a class="text-secondary dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 font-label-md text-label-md" href="laundrete.html">Laundrette</a>
+<a class="text-secondary dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 font-label-md text-label-md" href="tech.html">Tech</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1 font-label-md text-label-md" href="laundry%20shop.html">Shop All</a>
+</nav>
+<div class="flex items-center gap-6">
+<a class="material-symbols-outlined scale-95 active:opacity-80 transition-all text-primary dark:text-primary-fixed relative" href="cart.html" data-icon="shopping_bag">shopping_bag<span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 items-center justify-center rounded-full" data-cart-count style="display:none">0</span></a>
+<a class="material-symbols-outlined scale-95 active:opacity-80 transition-all text-primary dark:text-primary-fixed" href="../dasboard/login.html" data-icon="person" title="Admin Login">person</a>
+<button class="md:hidden material-symbols-outlined text-primary" data-icon="menu">menu</button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-12 flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Filter -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<div class="sticky top-32">
+<h2 class="font-label-md text-label-md uppercase tracking-widest text-secondary mb-8">Collections</h2>
+<ul class="space-y-4">
+<li class=""><a class="w-full text-left font-body-md py-1 border-b border-transparent hover:border-primary transition-all duration-300 block" href="wigs.html">Wigs</a></li>
+<li class=""><a class="w-full text-left font-body-md py-1 border-b border-transparent hover:border-primary transition-all duration-300 block" href="laundrete.html">Laundry</a></li>
+<li class=""><a class="w-full text-left font-body-md py-1 border-b border-transparent hover:border-primary transition-all duration-300 block" href="laundrete.html">Washing Machine Cleaner</a></li>
+<li class=""><a class="w-full text-left font-body-md py-1 border-b border-transparent hover:border-primary transition-all duration-300 block" href="tech.html">Phone Cases</a></li>
+</ul>
+<div class="mt-12 border-t border-outline-variant pt-8">
+<h2 class="font-label-md text-label-md uppercase tracking-widest text-secondary mb-8">Refine By</h2>
+<div class="space-y-6">
+<div>
+<span class="font-label-md block mb-3">Price Range</span>
+<div class="flex items-center gap-2">
+<input class="rounded-sm border-outline text-primary focus:ring-0" id="price-1" type="checkbox">
+<label class="text-sm" for="price-1">KES 0 — KES 6,500</label>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<input class="rounded-sm border-outline text-primary focus:ring-0" id="price-2" type="checkbox">
+<label class="text-sm" for="price-2">KES 6,500 — KES 26,000</label>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<input class="rounded-sm border-outline text-primary focus:ring-0" id="price-3" type="checkbox">
+<label class="text-sm" for="price-3">KES 26,000+</label>
+</div>
+</div>
+<div>
+<span class="font-label-md block mb-3">Material</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container text-[10px] uppercase font-bold tracking-tighter">Human Hair</span>
+<span class="px-3 py-1 bg-surface-container text-[10px] uppercase font-bold tracking-tighter">Eco-Friendly</span>
+<span class="px-3 py-1 bg-surface-container text-[10px] uppercase font-bold tracking-tighter">Matte TPU</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<section class="flex-grow">
+<div class="flex justify-between items-end mb-10 border-b border-outline-variant pb-6">
+<div>
+<h1 class="font-display-lg text-display-lg mb-2">Shop All</h1>
+<p class="text-secondary font-body-md">Showing 3 results for curated essentials.</p>
+</div>
+<div class="flex items-center gap-4">
+<select class="border-none bg-transparent font-label-md focus:ring-0 cursor-pointer">
+<option>Featured</option>
+<option>Newest</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-gutter gap-y-12">
+<!-- Product Card 1: The Silk Lace Wig -->
+<article class="product-card group relative flex flex-col">
+<div class="relative overflow-hidden aspect-[1.50] bg-surface-container-low mb-4 transition-all duration-500">
+<img alt="" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIgpcGQBEK_wMkUBiG35B2NGs5inmXL8p5aIhq62251Ms_SIugivyttD7IkEzW1B9SOTEvpcAxz2Bx_5HVcpyLkjVxkZxziitHeeQ9gvUITFm_6PoOIVEZJlHg2fOVGK6ycyUJUo8o3kAkPZ0ikha2eBiGdqOVSpV_Xec8QSSdM8Rr-KNA-buJnPUvpZYMBd2jnOfVR6jIzRXWnIta0msBJuvg3MVrV4pFD2llLjf270OcP85FimRVVbnf8HsvHyFu_X1R7oUyUv0">
+<button class="quick-add-btn absolute bottom-4 left-4 right-4 bg-primary text-on-primary py-3 font-label-md opacity-0 translate-y-2 transition-all duration-300 hover:bg-opacity-90" data-add-to-cart data-product-id="silk-lace-wig" data-product-name="The Silk Lace Wig" data-product-price="32370" data-product-variant="Premium Human Hair" data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBIgpcGQBEK_wMkUBiG35B2NGs5inmXL8p5aIhq62251Ms_SIugivyttD7IkEzW1B9SOTEvpcAxz2Bx_5HVcpyLkjVxkZxziitHeeQ9gvUITFm_6PoOIVEZJlHg2fOVGK6ycyUJUo8o3kAkPZ0ikha2eBiGdqOVSpV_Xec8QSSdM8Rr-KNA-buJnPUvpZYMBd2jnOfVR6jIzRXWnIta0msBJuvg3MVrV4pFD2llLjf270OcP85FimRVVbnf8HsvHyFu_X1R7oUyUv0">Quick Add — KES 32,370</button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md mb-1">The Silk Lace Wig</h3>
+<p class="text-secondary text-sm uppercase tracking-wider">Wigs • Premium Human Hair</p>
+</div>
+<span class="font-bold text-primary">KES 32,370</span>
+</div>
+</article>
+<!-- Product Card 2: Refined Laundry Detergent -->
+<article class="product-card group relative flex flex-col">
+<div class="relative overflow-hidden aspect-[1.50] bg-surface-container-low mb-4 transition-all duration-500">
+<img alt="" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcaf0PAbtvOEeTVUiIRMUvtIahVPToIUSTa11TwMkhAKbbXb_sqVnE-_J38VBzronelMMC2Oxl9VnLQ4jSx_6jxBGpdBobosI5zeRR2BZYzvt3XDNn3q1_MROf2bqZxlrhPxd7wEPjI9F2HFwlWrWwF6ieMNYJdbdYnPrKWFTvmsjI6CXwdGnlodeQ_uZTxSYH-8DyHJ5E9ksQm4CblyoncGdZsz7XHZPLCp5E_5og75pw_06yUtSrWHMJ7RKYZxatuCgbHWbuHEg">
+<button class="quick-add-btn absolute bottom-4 left-4 right-4 bg-primary text-on-primary py-3 font-label-md opacity-0 translate-y-2 transition-all duration-300 hover:bg-opacity-90" data-add-to-cart data-product-id="refined-detergent" data-product-name="Refined Laundry Detergent" data-product-price="4160" data-product-variant="Laundrette • Sustainable" data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAcaf0PAbtvOEeTVUiIRMUvtIahVPToIUSTa11TwMkhAKbbXb_sqVnE-_J38VBzronelMMC2Oxl9VnLQ4jSx_6jxBGpdBobosI5zeRR2BZYzvt3XDNn3q1_MROf2bqZxlrhPxd7wEPjI9F2HFwlWrWwF6ieMNYJdbdYnPrKWFTvmsjI6CXwdGnlodeQ_uZTxSYH-8DyHJ5E9ksQm4CblyoncGdZsz7XHZPLCp5E_5og75pw_06yUtSrWHMJ7RKYZxatuCgbHWbuHEg">Quick Add — KES 4,160</button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md mb-1">Refined Laundry Detergent</h3>
+<p class="text-secondary text-sm uppercase tracking-wider">Laundrette • Sustainable</p>
+</div>
+<span class="font-bold text-primary">KES 4,160</span>
+</div>
+</article>
+<!-- Product Card 3: Signature Matte Case -->
+<article class="product-card group relative flex flex-col">
+<div class="relative overflow-hidden aspect-[1.50] bg-surface-container-low mb-4 transition-all duration-500">
+<img alt="" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9YyYa24buOHlIx8MkC0kuqn-0jQEnBagHeX_6twiHP_hUZewIoHoiQGTRbFUpr4RZUSBOBzOSaLlnZTEiP3sRyAduq-jLiw7thCj1gsHbP_Xxo6PgvF5ixelhdIH-_7EF1zhMaVFcxN89N3nQynBRkoJba8y9eYwHmJwWVyk67tW7ABCWZf-6keW9U9p_NjXBQErX6hcbXg3N1kJmHLntSC4APizgSOoCoqjUfA9C64n18CKv_DfNTmnrvIzwybBkTQ-YY9abAEA">
+<button class="quick-add-btn absolute bottom-4 left-4 right-4 bg-primary text-on-primary py-3 font-label-md opacity-0 translate-y-2 transition-all duration-300 hover:bg-opacity-90" data-add-to-cart data-product-id="signature-matte-case" data-product-name="Signature Matte Case" data-product-price="5850" data-product-variant="Tech • iPhone 15 Pro" data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuA9YyYa24buOHlIx8MkC0kuqn-0jQEnBagHeX_6twiHP_hUZewIoHoiQGTRbFUpr4RZUSBOBzOSaLlnZTEiP3sRyAduq-jLiw7thCj1gsHbP_Xxo6PgvF5ixelhdIH-_7EF1zhMaVFcxN89N3nQynBRkoJba8y9eYwHmJwWVyk67tW7ABCWZf-6keW9U9p_NjXBQErX6hcbXg3N1kJmHLntSC4APizgSOoCoqjUfA9C64n18CKv_DfNTmnrvIzwybBkTQ-YY9abAEA">Quick Add — KES 5,850</button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md mb-1">Signature Matte Case</h3>
+<p class="text-secondary text-sm uppercase tracking-wider">Tech • iPhone 15 Pro</p>
+</div>
+<span class="font-bold text-primary">KES 5,850</span>
+</div>
+</article>
+<!-- Placeholder for Asymmetric Visual Flow -->
+<div class="hidden xl:flex flex-col justify-center items-center p-gutter bg-surface-container border border-outline-variant text-center opacity-60">
+<span class="material-symbols-outlined text-4xl mb-4" data-icon="auto_awesome">auto_awesome</span>
+<p class="font-label-md text-label-md uppercase tracking-widest">New Drops Weekly</p>
+<p class="text-xs mt-2 px-8">Stay tuned for our upcoming Tech accessories and Journal additions.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-margin-desktop px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto bg-surface-container dark:bg-primary-container border-t border-outline-variant dark:border-on-primary-fixed-variant">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed mb-4"><a href="home.html">BasicPosh</a></div>
+<p class="text-secondary dark:text-on-secondary-container font-body-md mb-6 leading-relaxed">Elevated essentials for the discerning modern lifestyle.</p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-primary mb-6">Collections</h4>
+<ul class="space-y-3 font-body-md text-secondary dark:text-on-secondary-container">
+<li class=""><a class="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="wigs.html">Wigs</a></li>
+<li class=""><a class="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="laundrete.html">Laundrette</a></li>
+<li class=""><a class="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="tech.html">Tech</a></li>
+<li class=""><a class="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="laundry%20shop.html">Shop All</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-primary mb-6">Support</h4>
+<ul class="space-y-3 font-body-md text-secondary dark:text-on-secondary-container">
+<li class=""><a class="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Terms</a></li>
+<li class=""><a class="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 underline" href="#">Privacy</a></li>
+<li class=""><a class="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Shipping</a></li>
+<li class=""><a class="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-primary mb-6">Connect</h4>
+<p class="text-secondary dark:text-on-secondary-container mb-4">Join our journal for exclusive drops and insights.</p>
+<div class="flex gap-2">
+<input class="bg-white dark:bg-surface-variant border border-outline px-4 py-2 w-full text-sm focus:ring-0 focus:border-primary" placeholder="email address" type="email">
+<button class="bg-primary text-on-primary px-4 py-2 opacity-90 hover:opacity-100 transition-all font-label-md uppercase text-[10px]">Join</button>
+</div>
+</div>
+<div class="md:col-span-4 mt-12 pt-8 border-t border-outline-variant text-center">
+<p class="text-secondary dark:text-on-secondary-container font-body-md">© 2025 BasicPosh Store. Elevated Essentials for the Discerning.</p>
+</div>
+</footer>
+<script>
+        // Sticky header background shift on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-sm');
+            } else {
+                header.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+<script src="cart.js"></script>
+<script src="site.js"></script>
+
+
+</body></html>

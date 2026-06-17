@@ -1,0 +1,312 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Laundrette Essentials | BasicPosh</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fbf9f9;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .marble-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(0,0,0,0.02) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .soft-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .soft-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.05);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error": "#ba1a1a",
+                      "on-secondary-container": "#5f6161",
+                      "primary": "#000000",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#251a03",
+                      "surface-container-low": "#f5f3f3",
+                      "surface-dim": "#dbdad9",
+                      "secondary-fixed": "#e2e2e2",
+                      "on-tertiary-fixed": "#251a03",
+                      "background": "#fbf9f9",
+                      "surface-tint": "#5f5e5e",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "on-surface": "#1b1c1c",
+                      "surface": "#fbf9f9",
+                      "inverse-primary": "#c8c6c5",
+                      "on-secondary-fixed-variant": "#454747",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "on-primary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-tertiary-container": "#938260",
+                      "outline-variant": "#c4c7c7",
+                      "inverse-surface": "#303031",
+                      "surface-container-high": "#e9e8e7",
+                      "surface-container-highest": "#e4e2e2",
+                      "on-secondary": "#ffffff",
+                      "inverse-on-surface": "#f2f0f0",
+                      "tertiary": "#000000",
+                      "tertiary-fixed-dim": "#d9c49e",
+                      "secondary": "#5d5f5f",
+                      "on-primary-fixed": "#1c1b1b",
+                      "surface-variant": "#e4e2e2",
+                      "on-background": "#1b1c1c",
+                      "primary-container": "#1c1b1b",
+                      "tertiary-fixed": "#f6e0b8",
+                      "surface-container": "#efeded",
+                      "on-primary-container": "#858383",
+                      "secondary-container": "#dcdddd",
+                      "on-surface-variant": "#444748",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#747878",
+                      "on-primary-fixed-variant": "#474646",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#534528",
+                      "surface-bright": "#fbf9f9",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "primary-fixed": "#e5e2e1",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto bg-white dark:bg-primary-container border-b border-outline-variant dark:border-on-primary-fixed-variant">
+<div class="flex items-center gap-8">
+<a class="font-headline-md text-headline-md tracking-tighter font-black text-primary dark:text-primary-fixed" href="home.html">BasicPosh</a>
+<nav class="hidden md:flex gap-6">
+<a class="font-label-md text-label-md text-secondary dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="wigs.html">Wigs</a>
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1" href="laundrete.html">Laundrette</a>
+<a class="font-label-md text-label-md text-secondary dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="tech.html">Tech</a>
+<a class="font-label-md text-label-md text-secondary dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="laundry%20shop.html">Shop All</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined scale-95 active:opacity-80 transition-all text-primary dark:text-primary-fixed" data-icon="search">search</button>
+<div class="flex gap-4">
+<a class="material-symbols-outlined scale-95 active:opacity-80 transition-all text-primary dark:text-primary-fixed relative" href="cart.html" data-icon="shopping_bag">shopping_bag</a>
+<a class="material-symbols-outlined scale-95 active:opacity-80 transition-all text-primary dark:text-primary-fixed" href="../dasboard/login.html" data-icon="person" title="Admin Login">person</a>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 marble-bg">
+<!-- Hero Section -->
+<section class="mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-outline-variant pb-8">
+<div>
+<span class="font-label-md text-label-md text-secondary mb-2 block uppercase tracking-widest">Collection</span>
+<h1 class="font-display-lg text-display-lg text-primary">Laundrette Essentials</h1>
+</div>
+<p class="font-body-lg text-body-lg text-secondary max-w-md">
+                    Elevated care for your most precious garments. Formulated with biodegradable ingredients and curated scents for a sophisticated sensory experience.
+                </p>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Featured Product -->
+<div class="md:col-span-8 group cursor-pointer">
+<div class="relative overflow-hidden bg-surface-container-low soft-lift h-[600px] transition-all duration-700 opacity-100">
+<img alt="Refined Laundry Detergent" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLvdUk-oP7VYoTa71u0SBdDkS-lDBYxtHnUcEOGNVTUOHIdZ2OsEmI00VBUjHbIAZjFCkcQ0ldaSz35HiJsehtNN3ppqu4erKLkGeNuS_GnRhJ1xaRo4cSG3xGt3lU9yQUAvqkczTmn1hybP-qEJI0isNqzscccm64JPlqYvYTYDfEh24dTPYhJQNhcUQ_t8n5I0_7fySyNT1EfRDhCDjWz2UpQHQoms9x0yNJGyXwEbQD608UxFOcHsDwM">
+<div class="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-black/20 to-transparent">
+<div class="flex justify-between items-end">
+<div>
+<span class="bg-primary text-on-primary px-3 py-1 font-label-md text-[10px] uppercase tracking-tighter mb-3 inline-block">Best Seller</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Refined Laundry Detergent</h2>
+<p class="font-body-md text-body-md text-secondary">Signature Sandalwood &amp; Bergamot</p>
+</div>
+<p class="font-headline-md text-headline-md text-primary">KES 4,940</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="md:col-span-4 flex flex-col gap-4 group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden soft-lift relative transition-all duration-700 opacity-100">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A premium laundry fabric softener bottle in a minimalist design, sitting on a white Carrara marble slab. The lighting is crisp and bright, highlighting the clean lines of the packaging. Soft shadows are cast against a neutral, off-white wall, creating a serene and high-end boutique atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLFZDfrAZwmUxobeu3zC6PsZMNPMNk5_r68B8aJfdWf-BXnMSVFJ65FNJ4fRqfml0SmVLYVCkmhHx83S07yWBQXZYf3yrkPW2fs8ZpMLnO9a1M2c3hZJgTGMCXWOh8RVKkEPlkWcJG5e3hydsCcSDRsDSLBKV3qLe9k3PrRhI1uywV5rzpQuCVXXu0Uwo2ffz9pv6DLuMxJ60aSheL-0MJ7DyZ9PddYH1PxROOtMucSex-TEA-qyEAutEUddiTB853ae0OcR-pIVA">
+<div class="absolute top-4 right-4">
+<span class="material-symbols-outlined text-primary bg-white/80 p-2 rounded-full" data-icon="favorite">favorite</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-md text-[20px] text-primary">Silk &amp; Wool Delicates Wash</h3>
+<div class="flex justify-between items-center mt-1">
+<p class="font-body-md text-body-md text-secondary">500ml / Plant-Based</p>
+<p class="font-headline-md text-[18px] text-primary">KES 4,160</p>
+</div>
+</div>
+<button class="mt-2 w-full bg-primary text-on-primary py-3 font-label-md text-label-md uppercase tracking-widest hover:opacity-90 transition-opacity" data-add-to-cart data-product-id="silk-wool-delicates" data-product-name="Silk &amp; Wool Delicates Wash" data-product-price="4160" data-product-variant="500ml / Plant-Based" data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCLFZDfrAZwmUxobeu3zC6PsZMNPMNk5_r68B8aJfdWf-BXnMSVFJ65FNJ4fRqfml0SmVLYVCkmhHx83S07yWBQXZYf3yrkPW2fs8ZpMLnO9a1M2c3hZJgTGMCXWOh8RVKkEPlkWcJG5e3hydsCcSDRsDSLBKV3qLe9k3PrRhI1uywV5rzpQuCVXXu0Uwo2ffz9pv6DLuMxJ60aSheL-0MJ7DyZ9PddYH1PxROOtMucSex-TEA-qyEAutEUddiTB853ae0OcR-pIVA">Add to Cart</button>
+</div>
+<!-- Product Card 3 -->
+<div class="md:col-span-4 flex flex-col gap-4 group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden soft-lift relative transition-all duration-700 opacity-100">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Luxurious wooden laundry drying rack with white linen towels hanging neatly. The scene is set in a sun-drenched, minimalist laundry room with white walls and light oak floors. The lighting is soft and airy, emphasizing the natural textures of the wood and the clean, fresh fabric." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaBOHCRr9qswy-EuocKG41eVKGSrZAKjeRv-PkIzvaq79G_m4qQuSgmXkB2tgE81LEgPwWpJSOe2gH5TsD0x9JjU5gxO0eCpjijUqLLIBltCGMTi8Egq_7l5wt5nkrWE7bFqAM9N7w8tvHWGiGBcnL6Hzq6w-9NTJrGua2I0VCk3VKqHE1TtreA7rbCg4zvFFr8pkuu0MayTG1YgmcqHUNoSwnNXX7nqBpTwTHxsFI_b2nQFQIZe7GX0Y3mWodZHnrG1yl8s79Unc">
+</div>
+<div>
+<h3 class="font-headline-md text-[20px] text-primary">Oak Fabric Mist</h3>
+<div class="flex justify-between items-center mt-1">
+<p class="font-body-md text-body-md text-secondary">Anti-static / 250ml</p>
+<p class="font-headline-md text-[18px] text-primary">KES 3,120</p>
+</div>
+</div>
+<button class="mt-2 w-full border border-primary text-primary py-3 font-label-md text-label-md uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all" data-add-to-cart data-product-id="oak-fabric-mist" data-product-name="Oak Fabric Mist" data-product-price="3120" data-product-variant="Anti-static / 250ml" data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBaBOHCRr9qswy-EuocKG41eVKGSrZAKjeRv-PkIzvaq79G_m4qQuSgmXkB2tgE81LEgPwWpJSOe2gH5TsD0x9JjU5gxO0eCpjijUqLLIBltCGMTi8Egq_7l5wt5nkrWE7bFqAM9N7w8tvHWGiGBcnL6Hzq6w-9NTJrGua2I0VCk3VKqHE1TtreA7rbCg4zvFFr8pkuu0MayTG1YgmcqHUNoSwnNXX7nqBpTwTHxsFI_b2nQFQIZe7GX0Y3mWodZHnrG1yl8s79Unc">Quick Shop</button>
+</div>
+<!-- Product Card 4 -->
+<div class="md:col-span-4 flex flex-col gap-4 group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden soft-lift relative transition-all duration-700 opacity-100">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A set of three premium wool dryer balls in a natural cream color, arranged in a ceramic bowl. The lighting is warm and domestic but professional, showcasing the soft texture of the wool. The composition is minimalist, using neutral tones and plenty of negative space to convey a sense of 'basic posh' luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjthpjRYwY6IIdX7BN6O1UMSImqDWl-jSW_gr9miHy8GP6KhfepY3sk2aa_ou2GOMloK4-HGkY0x5Z-fVRJrPg4_ViNPm_-AD6yPzmUGB5jsuJQGS6izomOOPFGnS6CobYkKSXiJljLi6sp_e0PlMKCdWSU31krBl7q7-L_DipvXOMTaLvD6C0te3tyKK0ZjbPhWincUuT_xBhblcvGaXz3qtigGdmFb3mJBgwb_V8ivmEx_PQqw5rs545zw4ZIHh-xZwkVukIVnw">
+</div>
+<div>
+<h3 class="font-headline-md text-[20px] text-primary">New Zealand Wool Dryer Balls</h3>
+<div class="flex justify-between items-center mt-1">
+<p class="font-body-md text-body-md text-secondary">Set of 3 / Reusable</p>
+<p class="font-headline-md text-[18px] text-primary">KES 3,640</p>
+</div>
+</div>
+<button class="mt-2 w-full border border-primary text-primary py-3 font-label-md text-label-md uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all" data-add-to-cart data-product-id="wool-dryer-balls" data-product-name="New Zealand Wool Dryer Balls" data-product-price="3640" data-product-variant="Set of 3 / Reusable" data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCjthpjRYwY6IIdX7BN6O1UMSImqDWl-jSW_gr9miHy8GP6KhfepY3sk2aa_ou2GOMloK4-HGkY0x5Z-fVRJrPg4_ViNPm_-AD6yPzmUGB5jsuJQGS6izomOOPFGnS6CobYkKSXiJljLi6sp_e0PlMKCdWSU31krBl7q7-L_DipvXOMTaLvD6C0te3tyKK0ZjbPhWincUuT_xBhblcvGaXz3qtigGdmFb3mJBgwb_V8ivmEx_PQqw5rs545zw4ZIHh-xZwkVukIVnw">Quick Shop</button>
+</div>
+<!-- Product Card 5 -->
+<div class="md:col-span-4 flex flex-col gap-4 group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden soft-lift relative transition-all duration-700 opacity-100">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An elegant, large wicker laundry hamper with a linen liner, placed in the corner of a high-end modern bathroom. Sunlight filters through a frosted window, creating a soft, diffused glow. The floor is white marble, and the overall aesthetic is one of sophisticated essentialism and clean, organized living." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyyeCYoaWH65OD4wPnpErfuCHsn2RUJfElkyY5YmC1-621NHOQoEOgBUbZIrAtyKgcyiMXBnM_P7hbN7bDpl0sRAN2N71OR4ZBe9HHVV61-W_1qGn2Zy2uo1Bkpz7RzTnQwxi49tT0rJY3FcZSMit0Pb5RSpVibNTFjPUmzjtGrNTWYGFcH_Vt8vBK6nAL-85M62c4DDzMMlbDYROjtHoWafHPYvJHK8uok171fSWUvCElJSfOV-o-n922wc1Zx62Yp21mpgEQkEM">
+</div>
+<div>
+<h3 class="font-headline-md text-[20px] text-primary">Linen-Lined Wicker Hamper</h3>
+<div class="flex justify-between items-center mt-1">
+<p class="font-body-md text-body-md text-secondary">Hand-woven / Natural</p>
+<p class="font-headline-md text-[18px] text-primary">KES 18,850</p>
+</div>
+</div>
+<button class="mt-2 w-full border border-primary text-primary py-3 font-label-md text-label-md uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all" data-add-to-cart data-product-id="wicker-hamper" data-product-name="Linen-Lined Wicker Hamper" data-product-price="18850" data-product-variant="Hand-woven / Natural" data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDyyeCYoaWH65OD4wPnpErfuCHsn2RUJfElkyY5YmC1-621NHOQoEOgBUbZIrAtyKgcyiMXBnM_P7hbN7bDpl0sRAN2N71OR4ZBe9HHVV61-W_1qGn2Zy2uo1Bkpz7RzTnQwxi49tT0rJY3FcZSMit0Pb5RSpVibNTFjPUmzjtGrNTWYGFcH_Vt8vBK6nAL-85M62c4DDzMMlbDYROjtHoWafHPYvJHK8uok171fSWUvCElJSfOV-o-n922wc1Zx62Yp21mpgEQkEM">Quick Shop</button>
+</div>
+</section>
+<!-- Newsletter / Brand Statement -->
+<section class="mt-24 py-20 bg-primary text-on-primary text-center px-6">
+<div class="max-w-2xl mx-auto">
+<h2 class="font-display-lg text-[36px] mb-6">The Ritual of Care</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-8">
+                    We believe everyday chores should be elevated to moments of mindfulness. Join our circle for care guides and first access to new scent drops.
+                </p>
+<form class="flex flex-col sm:flex-row gap-0 max-w-md mx-auto border border-on-primary-container">
+<input class="flex-grow bg-transparent border-none text-on-primary placeholder:text-on-primary-container p-4 font-label-md focus:ring-0" placeholder="ENTER YOUR EMAIL" type="email">
+<button class="bg-[#f6e0b8] text-primary px-8 py-4 font-label-md uppercase tracking-widest hover:brightness-110 transition-all">Join</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-margin-desktop px-margin-desktop bg-surface-container dark:bg-primary-container border-t border-outline-variant dark:border-on-primary-fixed-variant max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-12">
+<div class="col-span-1 md:col-span-1">
+<p class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed mb-4">BasicPosh</p>
+<p class="font-body-md text-body-md text-secondary dark:text-on-secondary-container">Elevated Essentials for the Discerning.</p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-4 uppercase tracking-wider">Shop</h4>
+<ul class="flex flex-col gap-2">
+<li class=""><a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="laundrete.html">Detergents</a></li>
+<li class=""><a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="laundrete.html">Fabric Softeners</a></li>
+<li class=""><a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="laundrete.html">Mist &amp; Fragrance</a></li>
+<li class=""><a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="laundrete.html">Tools &amp; Storage</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-4 uppercase tracking-wider">Information</h4>
+<ul class="flex flex-col gap-2">
+<li class=""><a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="#">Sustainability</a></li>
+<li class=""><a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="#">Shipping</a></li>
+<li class=""><a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="#">Returns</a></li>
+<li class=""><a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="#">Ingredients</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-4 uppercase tracking-wider">Follow Us</h4>
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors" data-icon="share">share</button>
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors" data-icon="public">public</button>
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors" data-icon="mail">mail</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-outline-variant/30">
+<p class="font-body-md text-body-md text-secondary dark:text-on-secondary-container">© 2025 BasicPosh Store. All Rights Reserved.</p>
+<div class="flex gap-6">
+<a class="font-body-md text-body-md text-secondary hover:text-primary" href="#">Terms</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary" href="#">Privacy</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple intersection observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.soft-lift').forEach(el => {
+            el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(el);
+        });
+    </script>
+<script src="cart.js"></script>
+<script src="site.js"></script>
+
+
+</body></html>

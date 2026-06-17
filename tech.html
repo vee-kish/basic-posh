@@ -1,0 +1,365 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Tech Armor | BasicPosh</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#5f6161",
+                        "primary": "#000000",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#251a03",
+                        "surface-container-low": "#f5f3f3",
+                        "surface-dim": "#dbdad9",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed": "#251a03",
+                        "background": "#fbf9f9",
+                        "surface-tint": "#5f5e5e",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-surface": "#1b1c1c",
+                        "surface": "#fbf9f9",
+                        "inverse-primary": "#c8c6c5",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#938260",
+                        "outline-variant": "#c4c7c7",
+                        "inverse-surface": "#303031",
+                        "surface-container-high": "#e9e8e7",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f2f0f0",
+                        "tertiary": "#000000",
+                        "tertiary-fixed-dim": "#d9c49e",
+                        "secondary": "#5d5f5f",
+                        "on-primary-fixed": "#1c1b1b",
+                        "surface-variant": "#e4e2e2",
+                        "on-background": "#1b1c1c",
+                        "primary-container": "#1c1b1b",
+                        "tertiary-fixed": "#f6e0b8",
+                        "surface-container": "#efeded",
+                        "on-primary-container": "#858383",
+                        "secondary-container": "#dcdddd",
+                        "on-surface-variant": "#444748",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#747878",
+                        "on-primary-fixed-variant": "#474646",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#534528",
+                        "surface-bright": "#fbf9f9",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "primary-fixed": "#e5e2e1",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fbf9f9;
+            color: #1b1c1c;
+            overflow-x: hidden;
+        }
+        .architectural-gradient {
+            background: linear-gradient(135deg, #e4e2e2 0%, #dbdad9 100%);
+        }
+        .bento-card {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full bg-white dark:bg-primary-container border-b border-outline-variant dark:border-on-primary-fixed-variant h-20">
+<nav class="flex justify-between items-center px-margin-desktop h-full max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md tracking-tighter font-black text-primary dark:text-primary-fixed" href="home.html">
+                BasicPosh
+            </a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-secondary dark:text-on-primary-container font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="wigs.html">Wigs</a>
+<a class="text-secondary dark:text-on-primary-container font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="laundrete.html">Laundrette</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1 font-label-md text-label-md transition-colors duration-200" href="tech.html">Tech</a>
+<a class="text-secondary dark:text-on-primary-container font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="laundry%20shop.html">Shop All</a>
+</div>
+<div class="flex items-center space-x-6">
+<a class="scale-95 active:opacity-80 transition-all" href="cart.html">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">shopping_bag</span>
+</a>
+<a class="scale-95 active:opacity-80 transition-all" href="../dasboard/login.html" title="Admin Login">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">person</span>
+</a>
+</div>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-16">
+<!-- Hero Title Section -->
+<section class="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<h1 class="font-display-lg text-display-lg mb-4">Tech Armor</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-xl">
+                    High-performance protection met with architectural precision. Our designer phone cases are forged for the discerning individual, balancing concrete durability with silver-refined aesthetics.
+                </p>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                    Refine
+                </div>
+<div class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-full font-label-md text-label-md">
+                    Sort: Featured
+                </div>
+</div>
+</section>
+<!-- Bento Grid Architectural Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Featured: Signature Matte Case (Landscape Large) -->
+<div class="md:col-span-8 group relative bento-card bg-surface-container-lowest border border-outline-variant overflow-hidden transition-all duration-1000 ease-out opacity-100 translate-y-0">
+<div class="aspect-[16/9] w-full bg-surface-container overflow-hidden">
+<img alt="Signature Matte Case" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLvQlAQ1F7dh4JNXzYC_1TUPglOw1_QOoxhB8WIPLUmM0Q5h38tElsJJi3E7YfkBP_mq7Wz0JmjRuiAn_x_ptUT0Ao0MaOmXlneY03UmcL06evBFcQTB_mUQxV0KiYPNMwmH6KmSV22WO6oOBxfbGKhzC2fdk2XGe14qyYs-Zum9PQRGO99QcxXl8FZxv9gKIlGItDgNaxf_bt0h6dKXmyj5bYWb2JJU0s9Lfi-7d4UNjAlhvPDQ52xr5dw">
+</div>
+<div class="p-8 flex justify-between items-start">
+<div>
+<span class="font-label-md text-label-md text-on-tertiary-container mb-2 block tracking-widest uppercase">Signature Collection</span>
+<h2 class="font-headline-lg text-headline-lg mb-2">Signature Matte Case</h2>
+<p class="text-secondary max-w-md">Refined tactile finish with subtle gold accents, engineered for a seamless fit.</p>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md block">KES 11,050</span>
+<button class="mt-4 px-6 py-2 bg-primary text-on-primary font-label-md text-label-md hover:bg-opacity-90 transition-all rounded-lg" data-add-to-cart data-product-id="signature-matte-case" data-product-name="Signature Matte Case" data-product-price="11050" data-product-variant="Signature Collection" data-product-image="https://lh3.googleusercontent.com/aida/AP1WRLvQlAQ1F7dh4JNXzYC_1TUPglOw1_QOoxhB8WIPLUmM0Q5h38tElsJJi3E7YfkBP_mq7Wz0JmjRuiAn_x_ptUT0Ao0MaOmXlneY03UmcL06evBFcQTB_mUQxV0KiYPNMwmH6KmSV22WO6oOBxfbGKhzC2fdk2XGe14qyYs-Zum9PQRGO99QcxXl8FZxv9gKIlGItDgNaxf_bt0h6dKXmyj5bYWb2JJU0s9Lfi-7d4UNjAlhvPDQ52xr5dw">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+</div>
+<!-- Accent Card: Architectural Material Focus -->
+<div class="md:col-span-4 bg-primary text-on-primary p-12 flex flex-col justify-center border border-primary">
+<span class="material-symbols-outlined text-4xl mb-6">architecture</span>
+<h3 class="font-headline-md text-headline-md mb-4">Silver &amp; Concrete</h3>
+<p class="font-body-md text-body-md opacity-80 leading-relaxed">
+                    Inspired by modern brutalist architecture, our Armor series utilizes cold-pressed polymers and recycled silver-grade aluminum.
+                </p>
+<div class="mt-10 h-px bg-on-primary opacity-20 w-full"></div>
+<div class="mt-6 flex gap-4">
+<div class="w-8 h-8 rounded-full border border-on-primary bg-[#BFC1C2]"></div>
+<div class="w-8 h-8 rounded-full border border-on-primary bg-[#2D2D2D]"></div>
+<div class="w-8 h-8 rounded-full border border-on-primary bg-[#004225]"></div>
+</div>
+</div>
+<!-- Featured: Forest Green Edition (Portrait-ish) -->
+<div class="md:col-span-6 bento-card group relative bg-surface-container-lowest border border-outline-variant overflow-hidden transition-all duration-1000 ease-out opacity-100 translate-y-0">
+<div class="aspect-square w-full bg-surface-container overflow-hidden">
+<img alt="Forest Green Edition" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnSPUilNU6YwtLaoVMhff479KSIVcGNLPMeMpRbTP0BQpE7NsyJ7CKCLiYW7xF5JkwQ8fcwBMdgUmtQ4uUU9_wXFcZ9vA-nDpLqsAaslcr21MfPGlYNFmh_FUZ8V-HCYsYIfjuw9UXa2s9dBtwkJhdIReExYlj4Ab5yZhL4YdGTfNkS-R0SQ4aTLBv7Nfapl0NDRyO-c-B9EeTImeXOV1O1tT9PLJSrPL9jvuWbhA2spTqhhC69mSR_i_1C99knfYqM0AQdmvbSGU">
+</div>
+<div class="p-8">
+<div class="flex justify-between items-center mb-4">
+<span class="px-3 py-1 bg-surface-container text-[10px] font-bold uppercase tracking-tighter">Limited Release</span>
+<span class="font-headline-md text-headline-md">KES 12,350</span>
+</div>
+<h2 class="font-headline-md text-headline-md mb-2">Forest Green Edition</h2>
+<p class="text-secondary mb-6">Architectural silver accents paired with a deep matte finish.</p>
+<button class="w-full py-4 border border-primary font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all" data-add-to-cart data-product-id="forest-green-case" data-product-name="Forest Green Edition" data-product-price="12350" data-product-variant="Limited Release" data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDnSPUilNU6YwtLaoVMhff479KSIVcGNLPMeMpRbTP0BQpE7NsyJ7CKCLiYW7xF5JkwQ8fcwBMdgUmtQ4uUU9_wXFcZ9vA-nDpLqsAaslcr21MfPGlYNFmh_FUZ8V-HCYsYIfjuw9UXa2s9dBtwkJhdIReExYlj4Ab5yZhL4YdGTfNkS-R0SQ4aTLBv7Nfapl0NDRyO-c-B9EeTImeXOV1O1tT9PLJSrPL9jvuWbhA2spTqhhC69mSR_i_1C99knfYqM0AQdmvbSGU">
+                        Secure Access
+                    </button>
+</div>
+</div>
+<!-- Tech Accessory Item: Silver Link -->
+<div class="md:col-span-3 bento-card group bg-surface-container-high border border-outline-variant p-8 flex flex-col justify-between transition-all duration-1000 ease-out opacity-100 translate-y-0">
+<div>
+<div class="aspect-square w-full mb-6 bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity" data-alt="A macro photograph of a high-end metal silver phone strap with intricate industrial links. The accessory is resting on a slab of raw light grey concrete. Soft morning light creates subtle shadows and highlights the polished metallic texture. The overall aesthetic is minimalist, modern, and expensive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj3H5QwqOGvlFaD902yGZ_4R0I6KOTS957-NRv5NTjmdOW46MP1wQEz9AanfUIT68Mm-dLJqEGr1EgLIZ_dfW1tuoKeXTlmc2B4iPRFSFUWCQMXg_D9wVSdcv3ZtHVmLZx7icUVvsdd4O0xcTXTGkdJYZyoINkxORksEZvpSCjMG2vlKKugP3a8Nvr3Ri11L_K4ixx17FzUToDMSxMEROa62EqPaZO7Dp6Eg_RJmJWYgtfb37wmAMtMK2RSHKF-IQBKmGmx7IHalo">
+</div>
+<h3 class="font-label-md text-label-md font-bold">Silver Industrial Link</h3>
+<p class="text-secondary text-sm mt-1">Stainless steel wearable</p>
+</div>
+<span class="font-headline-md text-headline-md mt-4">KES 15,600</span>
+</div>
+<!-- Tech Accessory Item: Concrete Charging Pad -->
+<div class="md:col-span-3 bento-card group bg-surface-container border border-outline-variant p-8 flex flex-col justify-between transition-all duration-1000 ease-out opacity-100 translate-y-0">
+<div>
+<div class="aspect-square w-full mb-6 bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A premium wireless charging pad made from smooth, light-colored architectural concrete. A silver ring defines the charging area in the center. The pad sits on a minimalist white desk beside a small architectural model. The scene is shot with high-key lighting, emphasizing clean lines and a high-end corporate lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSfR2Dhm39ZLXXwedoezq__FlG-ZnImb1x0RwSL67qt-VNooMChtqpq8g1mhVOT7TZP1GwMzFNFVopkrt57nzGGboaf5cx77cAdInSJ6-r7xEQYAtVJIHDD5XEZfvCxp_zgqG0hRNd6u-8hrC1u_fv0al3W7k8iGZ8twBtWSPCFyeGuvnU35OLSB6ksXHyWYIvSvu3EE6Gjh8CZdDEJr1JDJFgjYE4s85BcpQdV11sYZsML4g6X2S4I06utaL1mA4vBUFZiYxDeMs">
+</div>
+<h3 class="font-label-md text-label-md font-bold">Monolith Charging Pad</h3>
+<p class="text-secondary text-sm mt-1">Real concrete cast</p>
+</div>
+<span class="font-headline-md text-headline-md mt-4">KES 8,450</span>
+</div>
+</div>
+<!-- Secondary Collection Grid -->
+<section class="mt-32">
+<div class="flex items-center justify-between mb-12">
+<h2 class="font-headline-lg text-headline-lg">Ancillary Essentials</h2>
+<a class="font-label-md text-label-md border-b border-primary pb-1" href="laundry%20shop.html">View All Tech</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card Template -->
+<div class="flex flex-col group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-end laptop sleeve crafted from charcoal felt and reinforced with silver industrial hardware. The sleeve is presented on a minimalist glass table within a modern office setting. The lighting is cold and precise, reflecting off the silver clips. The design represents professional sophisticated essentialism with a tech focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1wzSxBORKYVtw3XoJr910mJPO8VLemCQtkEJndrIVQ--Pb3K-wh8KFmX4R-Y9KvxkBZLt89VpwqOjueuKuLXMCFu1BXdgj6sCegZKPwEJFrWUI89eYsCrjObX9XPTmeztZTCqHj8E-MH1hlfT3_8ukhlSy8tQy5Zv9AbK6lTZpTCgHRdoEjV2I7MIwGTrFy_lNnd7B2By77w98YiozYW4mLiHSNBtmEt1EyCoIyiD0OT5iq1SPcfPpRzQCJ873hXBQ-f80wo7iTg">
+<button class="absolute bottom-4 right-4 bg-primary text-on-primary p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 add-shopping-cart-btn" data-product-id="armor-sleeve" data-product-name="Armor Sleeve" data-product-price="18850" data-product-variant="Felt &amp; Silver Hardware" data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuB1wzSxBORKYVtw3XoJr910mJPO8VLemCQtkEJndrIVQ--Pb3K-wh8KFmX4R-Y9KvxkBZLt89VpwqOjueuKuLXMCFu1BXdgj6sCegZKPwEJFrWUI89eYsCrjObX9XPTmeztZTCqHj8E-MH1hlfT3_8ukhlSy8tQy5Zv9AbK6lTZpTCgHRdoEjV2I7MIwGTrFy_lNnd7B2By77w98YiozYW4mLiHSNBtmEt1EyCoIyiD0OT5iq1SPcfPpRzQCJ873hXBQ-f80wo7iTg">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<h4 class="font-label-md text-label-md font-bold mb-1 uppercase tracking-wider">Armor Sleeve</h4>
+<p class="text-secondary text-sm mb-2">Felt &amp; Silver Hardware</p>
+<p class="font-headline-md text-headline-md">KES 18,850</p>
+</div>
+<div class="flex flex-col group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist tech pouch made of semi-transparent silver mesh and matte black waterproof zippers. It contains various cables organized neatly. The pouch is shown in a clean, brightly lit studio environment against a soft grey backdrop. The aesthetic is extremely modern, leaning into the 'Posh' side of tech accessories." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbhMHg9lW6aADJsAN92y0OohHJU6L76HxM2IW9dooW5_5nw9rRq_v6L435txj6Y-aLDVf48yexCjnWHuz_6V_D9tBgLm042YRoyLhf3FteNQL4dM37r5qf3X1joOjDqDnGr579F_pYZ3dC50qJceDleNhxdhRJKIAxszX5sh219x_uHBeyPN9uN1zpLTGXNcCD59sz6E5prujOu4MqrKWyr4G64Wlp70JDiroGzCPPvHIrYUc41sOmu6S8ES_1ZrjykRLc_wC4zIs">
+<button class="absolute bottom-4 right-4 bg-primary text-on-primary p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 add-shopping-cart-btn" data-product-id="grid-pouch" data-product-name="Grid Pouch" data-product-price="5200" data-product-variant="Silver Mesh Organization" data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCbhMHg9lW6aADJsAN92y0OohHJU6L76HxM2IW9dooW5_5nw9rRq_v6L435txj6Y-aLDVf48yexCjnWHuz_6V_D9tBgLm042YRoyLhf3FteNQL4dM37r5qf3X1joOjDqDnGr579F_pYZ3dC50qJceDleNhxdhRJKIAxszX5sh219x_uHBeyPN9uN1zpLTGXNcCD59sz6E5prujOu4MqrKWyr4G64Wlp70JDiroGzCPPvHIrYUc41sOmu6S8ES_1ZrjykRLc_wC4zIs">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<h4 class="font-label-md text-label-md font-bold mb-1 uppercase tracking-wider">Grid Pouch</h4>
+<p class="text-secondary text-sm mb-2">Silver Mesh Organization</p>
+<p class="font-headline-md text-headline-md">KES 5,200</p>
+</div>
+<div class="flex flex-col group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A collection of designer cable ties made from brushed silver metal and premium black leather. They are arranged neatly on a white marble surface. The lighting is soft and luxurious, creating a sophisticated feel. The image emphasizes high-end small tech essentials for a boutique-store aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXgB90E0acRhb7MDj4p6LIgKfpZCROt8U67nk2CIzGyRe3ZXMIzv1tHcErOgAHmizS6IXZHUItDdFbVjH1ojy-hXG-3G0tD3c2Q1gVrdzCkBk-hZLP0yz08BPR0RedLtHKi5fYQk_oBne-wVKp3PDbnxCQ0-klNXZcvmeP111H33b7d7wSvd0siNoJE0jHk-auXdJuCRPVtB_2Q6iqC0CaPMNNjIaQYe4CmTUugkNTiN7uibayd2q3eIRluwIfPHVnNERaNapgtXs">
+<button class="absolute bottom-4 right-4 bg-primary text-on-primary p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 add-shopping-cart-btn" data-product-id="cable-cincher" data-product-name="Cable Cincher" data-product-price="3250" data-product-variant="Leather &amp; Brushed Metal" data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAXgB90E0acRhb7MDj4p6LIgKfpZCROt8U67nk2CIzGyRe3ZXMIzv1tHcErOgAHmizS6IXZHUItDdFbVjH1ojy-hXG-3G0tD3c2Q1gVrdzCkBk-hZLP0yz08BPR0RedLtHKi5fYQk_oBne-wVKp3PDbnxCQ0-klNXZcvmeP111H33b7d7wSvd0siNoJE0jHk-auXdJuCRPVtB_2Q6iqC0CaPMNNjIaQYe4CmTUugkNTiN7uibayd2q3eIRluwIfPHVnNERaNapgtXs">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<h4 class="font-label-md text-label-md font-bold mb-1 uppercase tracking-wider">Cable Cincher</h4>
+<p class="text-secondary text-sm mb-2">Leather &amp; Brushed Metal</p>
+<p class="font-headline-md text-headline-md">KES 3,250</p>
+</div>
+<div class="flex flex-col group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A premium silver stylus with a weighted balance, resting on a charcoal colored notebook. The setting is a minimalist workspace with a large window in the background showing a blurred city skyline. The lighting is dramatic and architectural, casting long shadows. The vibe is executive, professional, and unattainable luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy_W3kYrhKfcuCy3PBkxvXrk57NTq254aP84oX28xxuBLZ6DfUKOgCD7DPlMRfjZz1_qdKgWb-wG5p_7k4Jv9p8T9_04CWOaIZ_sx8jh2Z__YVal9pbP2XV1AUWFPIruODRVT8mFdehTSCsTsEd_6F_lYxlltbUKwBXF219IUXMjTTEYyXDzD6O9GdRPY2CMTSnOBbrgSkSaR1wdwRZ9wGdFhVKE-wgBdysXc7ITwK4KlAU0r_GTdcNoqjkv3wEJoyYTtalez8dYA">
+<button class="absolute bottom-4 right-4 bg-primary text-on-primary p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 add-shopping-cart-btn" data-product-id="precision-stylus" data-product-name="Precision Stylus" data-product-price="14300" data-product-variant="Silver Alloy Casting" data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBy_W3kYrhKfcuCy3PBkxvXrk57NTq254aP84oX28xxuBLZ6DfUKOgCD7DPlMRfjZz1_qdKgWb-wG5p_7k4Jv9p8T9_04CWOaIZ_sx8jh2Z__YVal9pbP2XV1AUWFPIruODRVT8mFdehTSCsTsEd_6F_lYxlltbUKwBXF219IUXMjTTEYyXDzD6O9GdRPY2CMTSnOBbrgSkSaR1wdwRZ9wGdFhVKE-wgBdysXc7ITwK4KlAU0r_GTdcNoqjkv3wEJoyYTtalez8dYA">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<h4 class="font-label-md text-label-md font-bold mb-1 uppercase tracking-wider">Precision Stylus</h4>
+<p class="text-secondary text-sm mb-2">Silver Alloy Casting</p>
+<p class="font-headline-md text-headline-md">KES 14,300</p>
+</div>
+</div>
+</section>
+<!-- Newsletter / Community -->
+<section class="mt-40 mb-20 bg-surface-container-lowest p-12 md:p-20 border border-outline-variant text-center max-w-4xl mx-auto">
+<h3 class="font-display-lg text-display-lg mb-4">Join the Armoury</h3>
+<p class="text-secondary mb-10 max-w-lg mx-auto">Receive early access to limited edition drops and architectural insights from the BasicPosh Tech lab.</p>
+<form class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
+<input class="flex-grow bg-transparent border-0 border-b border-outline focus:ring-0 focus:border-primary px-0 py-3 uppercase text-xs tracking-widest" placeholder="YOUR EMAIL" type="email">
+<button class="bg-primary text-on-primary px-10 py-3 font-label-md text-label-md hover:bg-opacity-90 transition-all">
+                    SUBSCRIBE
+                </button>
+</form>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-margin-desktop px-margin-desktop bg-surface-container dark:bg-primary-container border-t border-outline-variant dark:border-on-primary-fixed-variant">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed mb-6">BasicPosh</div>
+<p class="text-secondary dark:text-on-secondary-container font-body-md text-body-md opacity-70 leading-relaxed">
+                    Elevated Essentials for the Discerning individual. Quality crafted tech and personal accessories.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md font-bold uppercase tracking-widest text-primary dark:text-primary-fixed mb-2">Shop</h4>
+<a class="text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="tech.html">Tech</a>
+<a class="text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="wigs.html">Wigs</a>
+<a class="text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="laundrete.html">Laundrette</a>
+<a class="text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="laundry%20shop.html">Shop All</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md font-bold uppercase tracking-widest text-primary dark:text-primary-fixed mb-2">Support</h4>
+<a class="text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Shipping</a>
+<a class="text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Privacy</a>
+<a class="text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Terms</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md font-bold uppercase tracking-widest text-primary dark:text-primary-fixed mb-2">Social</h4>
+<a class="text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Instagram</a>
+<a class="text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Journal</a>
+<a class="text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Sustainability</a>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-20 pt-10 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center opacity-60">
+<p class="font-body-md text-body-md text-primary dark:text-primary-fixed mb-4 md:mb-0">
+                © 2025 BasicPosh Store. Elevated Essentials for the Discerning.
+            </p>
+<div class="flex gap-8">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all">credit_card</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all">payments</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all">local_shipping</span>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Smooth appearance of grid items
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-1000', 'ease-out');
+            observer.observe(card);
+        });
+    </script>
+<script src="cart.js"></script>
+<script src="site.js"></script>
+
+
+</body></html>
