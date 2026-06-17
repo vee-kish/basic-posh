@@ -129,9 +129,57 @@
 <div class="flex items-center gap-6">
 <a class="material-symbols-outlined scale-95 active:opacity-80 transition-all text-primary dark:text-primary-fixed relative" href="cart.html" data-icon="shopping_bag">shopping_bag<span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 items-center justify-center rounded-full" data-cart-count style="display:none">0</span></a>
 <a class="material-symbols-outlined scale-95 active:opacity-80 transition-all text-primary dark:text-primary-fixed" href="login.html" data-icon="person" title="Admin Login">person</a>
-<button class="md:hidden material-symbols-outlined text-primary" data-icon="menu">menu</button>
-</div>
+<button
+    id="mobile-menu-button"
+    class="md:hidden p-1"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+>
+    <span
+        id="menu-icon"
+        class="material-symbols-outlined text-primary"
+    >
+        menu
+    </span>
+</button></div>
 </header>
+ <!-- Mobile Navigation -->
+<div
+    id="mobile-menu"
+    class="hidden md:hidden fixed top-20 left-0 w-full bg-white border-b border-outline-variant shadow-lg z-40"
+>
+    <nav class="flex flex-col px-margin-mobile py-4">
+
+        <a
+            href="wigs.html"
+            class="py-4 border-b border-outline-variant text-secondary hover:text-primary transition-colors"
+        >
+            Wigs
+        </a>
+
+        <a
+            href="laundrete.html"
+            class="py-4 border-b border-outline-variant text-secondary hover:text-primary transition-colors"
+        >
+            Laundrette
+        </a>
+
+        <a
+            href="tech.html"
+            class="py-4 border-b border-outline-variant text-secondary hover:text-primary transition-colors"
+        >
+            Tech
+        </a>
+
+        <a
+            href="laundry%20shop.html"
+            class="py-4 text-secondary hover:text-primary transition-colors"
+        >
+            Shop All
+        </a>
+
+    </nav>
+</div>
 <main class="max-w-container-max mx-auto px-margin-desktop py-12 flex flex-col md:flex-row gap-gutter">
 <!-- Sidebar Filter -->
 <aside class="w-full md:w-64 flex-shrink-0">
@@ -290,6 +338,42 @@
     </script>
 <script src="cart.js"></script>
 <script src="site.js"></script>
+ <script>
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    menuButton.addEventListener('click', () => {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+
+        mobileMenu.classList.toggle('hidden');
+
+        menuIcon.textContent = isOpen ? 'menu' : 'close';
+
+        menuButton.setAttribute(
+            'aria-expanded',
+            String(!isOpen)
+        );
+    });
+
+    // Close menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuIcon.textContent = 'menu';
+            menuButton.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // Close menu when screen resizes to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            mobileMenu.classList.add('hidden');
+            menuIcon.textContent = 'menu';
+            menuButton.setAttribute('aria-expanded', 'false');
+        }
+    });
+</script>
 
 
 </body></html>
