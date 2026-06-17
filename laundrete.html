@@ -138,6 +138,43 @@
 </div>
 </div>
 </header>
+        <!-- Mobile Navigation -->
+<div
+    id="mobile-menu"
+    class="hidden md:hidden fixed top-20 left-0 w-full bg-white border-b border-outline-variant shadow-lg z-40"
+>
+    <nav class="flex flex-col px-margin-mobile py-4">
+
+        <a
+            href="wigs.html"
+            class="py-4 border-b border-outline-variant text-secondary hover:text-primary transition-colors"
+        >
+            Wigs
+        </a>
+
+        <a
+            href="laundrete.html"
+            class="py-4 border-b border-outline-variant text-secondary hover:text-primary transition-colors"
+        >
+            Laundrette
+        </a>
+
+        <a
+            href="tech.html"
+            class="py-4 border-b border-outline-variant text-secondary hover:text-primary transition-colors"
+        >
+            Tech
+        </a>
+
+        <a
+            href="laundry%20shop.html"
+            class="py-4 text-secondary hover:text-primary transition-colors"
+        >
+            Shop All
+        </a>
+
+    </nav>
+</div>
 <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 marble-bg">
 <!-- Hero Section -->
 <section class="mb-16">
@@ -309,4 +346,41 @@
 <script src="site.js"></script>
 
 
-</body></html>
+</body>
+<script>
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    menuButton.addEventListener('click', () => {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+
+        mobileMenu.classList.toggle('hidden');
+
+        menuIcon.textContent = isOpen ? 'menu' : 'close';
+
+        menuButton.setAttribute(
+            'aria-expanded',
+            String(!isOpen)
+        );
+    });
+
+    // Close menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuIcon.textContent = 'menu';
+            menuButton.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // Close menu when screen resizes to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            mobileMenu.classList.add('hidden');
+            menuIcon.textContent = 'menu';
+            menuButton.setAttribute('aria-expanded', 'false');
+        }
+    });
+</script>
+</html>
